@@ -21,4 +21,4 @@ class MoonBall extends Ball {
     }
 }
 
-window.customElements.define("moonball-component", MoonBall)
+window.customElements.define("moonball-component", MoonBall as any)

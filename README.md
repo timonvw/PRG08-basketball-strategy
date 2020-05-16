@@ -1,42 +1,13 @@
 # PRG08-basketball-strategy
 
+In deze opdracht is het de bedoeling om het strategy pattern toe te passen. Op dit moment hebben de verschillende type ballen hun eigen gedrag in de class. 
+
+Uiteindelijk is er maar 1 Ball class en de manier waarom de ball beweegt (wel of niet stuitert) zal opgenomen worden in behavior classes. 
+
 ## Opdracht 1
 Laat de basketball bewegen door het scherm zodat 'op aarde' de bal stuitert en 'op de maan' de bal tegen de randen van het scherm bots zonder zwaartekracht. 
 
 ## Opdracht 2 
-Voeg het strategy pattern toe zodat het zelfde effect als bij opdracht 1 bereikt wordt.
+Voeg het strategy pattern toe zodat hetzelfde effect als bij opdracht 1 bereikt wordt. Als de basketball over de middellijn is, wordt vanuit de main het gedrag veranderd. 
 
-## Strategy Pattern
-
-Interface
-```
-interface Behaviour {
-    car:Car
-    update():void
-} 
-```
-Behaviour class
-```
-class Driving implements Behaviour {
-    private car : Car
-    constructor(c:Car) {
-         this.car = c
-    }
-    update {
-         this.car.x ++
-    }
-}
-```
-Car heeft Behaviour
-```
-class Car {
-    public behaviour : Behaviour
-    public x:number
-    constructor() {
-        this.behaviour = new Driving(this)
-    }
-    update(){
-        this.behaviour.update()
-    }
-}
-```
+![alt text](basketball-strategy.png "UML Basketball Strategy")

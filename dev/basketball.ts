@@ -9,4 +9,4 @@ class BasketBall extends Ball{
     }
 }
 
-window.customElements.define("basketball-component", BasketBall)
+window.customElements.define("basketball-component", BasketBall as any)

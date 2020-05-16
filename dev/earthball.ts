@@ -34,4 +34,4 @@ class EarthBall extends Ball{
     }
 }
 
-window.customElements.define("earthball-component", EarthBall)
+window.customElements.define("earthball-component", EarthBall as any)
