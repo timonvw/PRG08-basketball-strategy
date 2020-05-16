@@ -1,5 +1,7 @@
 # PRG08-basketball-strategy
 
+[Demo Bastketball Strategy](https://hr-cmgt.github.io/PRG08-basketball-strategy-completed/)
+
 In deze opdracht is het de bedoeling om het strategy pattern toe te passen. Op dit moment hebben de verschillende type ballen hun eigen gedrag in de class. 
 
 Uiteindelijk is er maar 1 Ball class en de manier waarom de ball beweegt (wel of niet stuitert) zal opgenomen worden in behavior classes. 
