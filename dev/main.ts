@@ -18,6 +18,7 @@ class Main {
         }
 
         this.basketBall.update()
+        console.log("updating")
 
         requestAnimationFrame(() => this.gameLoop())
     }
