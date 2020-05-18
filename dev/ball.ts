@@ -1,20 +1,20 @@
-abstract class Ball extends HTMLElement{
+class Ball extends HTMLElement{
 
-    protected readonly gravity    : number = 0.1
-    protected readonly friction   : number = 0.9
+    public readonly gravity    : number = 0.1
+    public readonly friction   : number = 0.9
 
-    protected x           : number = 0
-    protected y           : number = 0
-    protected speedX      : number = 5
-    protected speedY      : number = -3
-    protected minWidth    : number = 0
-    protected maxWidth    : number = 0
-    protected maxHeight   : number = 0
-
-    
+    //ben lui en heb alles public gemaakt ipv getters en setters
+    public x           : number = 0
+    public y           : number = 0
+    public speedX      : number = 5
+    public speedY      : number = -3
+    public minWidth    : number = 0
+    public maxWidth    : number = 0
+    public maxHeight   : number = 0
+    public ballBehavoir : BallBehavoir = new Space()
     public get X() : number { return this.x }
     
-    constructor(minWidth : number, maxWidth : number) {
+    constructor(minWidth : number, maxWidth : number, behavior : BallBehavoir) {
         super()
 
         let content = document.getElementsByTagName("content")[0]
@@ -27,11 +27,24 @@ abstract class Ball extends HTMLElement{
         this.minWidth   = minWidth
         this.maxWidth   = maxWidth
         this.maxHeight  = window.innerHeight - this.clientHeight
+
+        this.ballBehavoir = behavior
     }
 
-    abstract update() : void
+    public setBallBehavior(behavior : BallBehavoir) : void
+    {
+        this.ballBehavoir = behavior;
+    }
+
+    public update() : void
+    {
+        this.ballBehavoir.performUpdate(this)
+        this.draw()
+    }
 
     public draw() {
         this.style.transform = "translate("+this.x+"px, "+this.y+"px)"
     }
 }
+
+window.customElements.define("ball-component", Ball as any)
